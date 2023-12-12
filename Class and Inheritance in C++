@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+class Vehicle {
+protected:
+    std::string brand;
+
+public:
+    void honk() {
+        std::cout << "Tuut, tuut!" << std::endl;
+    }
+};
+
+class Car : public Vehicle {
+private:
+    std::string model;
+
+public:
+    Car(std::string b, std::string m) {
+        brand = b;
+        model = m;
+    }
+
+    void displayInfo() {
+        std::cout << "Brand: " << brand << ", Model: " << model << std::endl;
+    }
+};
+
+// Usage
+int main() {
+    Car myCar("Toyota", "Corolla");
+    myCar.displayInfo();
+    myCar.honk();
+    return 0;
+}
